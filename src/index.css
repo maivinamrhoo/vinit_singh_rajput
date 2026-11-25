@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ivory: #F8F1E6;
+  --color-parchment: #EFE2CC;
+  --color-forest: #23483D;
+  --color-deep-green: #17372F;
+  --color-dusty-rose: #DDA7A0;
+  --color-terracotta: #B96F4E;
+  --color-gold: #B69A61;
+  --color-sage: #A1A88B;
+  --color-ink: #40352D;
+
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-serif: "Lora", "Noto Serif Devanagari", Georgia, serif;
+  --font-sans: "DM Sans", system-ui, -apple-system, sans-serif;
+  --font-hand: "Caveat", cursive;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #F8F1E6;
+    color: #40352D;
+    font-family: var(--font-serif);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+.paper-grain {
+  background-image:
+    radial-gradient(rgba(64, 53, 45, 0.03) 1px, transparent 0),
+    radial-gradient(rgba(182, 154, 97, 0.04) 1px, transparent 0);
+  background-size: 28px 28px;
+  background-position: 0 0, 14px 14px;
+}
+
+.literary-dropcap::first-letter {
+  font-family: var(--font-display);
+  font-size: 2.85rem;
+  line-height: 0.82;
+  float: left;
+  padding-right: 0.42rem;
+  padding-top: 0.18rem;
+  color: #23483D;
+  font-weight: 600;
+}
